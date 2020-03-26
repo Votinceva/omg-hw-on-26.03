@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char *str_chr (char *s, char c)
+{
+    char *chr;
+    int i;
+
+    for(i = 0; i < 20; i++)
+        if (s[i] == c[0]){
+            *chr = *s[i];
+            break;
+        }
+
+
+    return *chr;
+}
+
+int main()
+{
+    char l[21];
+    char cha[1];
+
+    printf("Enter some string (max: 20 characters):");
+    scanf("%20s", l);
+    printf("Enter the character that appears in the string:");
+    scanf("%1s", cha);
+
+    printf("\nAddress of the first occurrence of this character in the string: %d\n", str_chr(l, cha));
+
+    return 0;
+}
